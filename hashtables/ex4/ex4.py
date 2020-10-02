@@ -4,6 +4,20 @@ def has_negatives(a):
     """
     # Your code here
 
+    counts = {}
+
+    for num in a:
+        if abs(num) in counts:
+            counts[abs(num)] += 1
+        if abs(num) not in counts:
+            counts[abs(num)] = 1
+
+    result = []
+
+    for k, v in counts.items():
+        if v > 1:
+            result.append(k)
+
     return result
 
 
