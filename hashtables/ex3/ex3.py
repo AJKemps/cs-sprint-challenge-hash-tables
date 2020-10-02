@@ -3,6 +3,22 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    num_arr = len(arrays)
+
+    common = {}
+
+    for arr in arrays:
+        for num in arr:
+            if num not in common:
+                common[num] = 1
+            if num in common:
+                common[num] += 1
+
+    result = []
+
+    for k, v in common.items():
+        if v > 2:
+            result.append(k)
 
     return result
 
